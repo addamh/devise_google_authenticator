@@ -1,5 +1,6 @@
 class Devise::DisplayqrController < DeviseController
   prepend_before_filter :authenticate_scope!, :only => [:show, :update, :refresh]
+  layout 'application'
 
   include Devise::Controllers::Helpers
 
@@ -24,7 +25,7 @@ class Devise::DisplayqrController < DeviseController
     if resource.set_gauth_enabled(params[resource_name]['gauth_enabled'])
       set_flash_message :notice, (resource.gauth_enabled? ? :enabled : :disabled)
       sign_in scope, resource, :bypass => true
-      redirect_to stored_location_for(scope) || :root
+      redirect_to stored_location_for(scope) || :profile
     else
       render :show
     end
@@ -38,7 +39,7 @@ class Devise::DisplayqrController < DeviseController
       sign_in scope, resource, :bypass => true
       redirect_to [resource_name, :displayqr]
     else
-      redirect_to :root
+      redirect_to :profile
     end
   end
 

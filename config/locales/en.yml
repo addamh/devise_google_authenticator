@@ -1,11 +1,11 @@
 en:
   devise:
     submit_token: "Check Token"
-    submit_token_title: "Please enter your Google Authenticator token:"
+    submit_token_title: "Please enter your 2FA token:"
     registration:
-      title: "Your QR Code:"
-      nice_request: "Would you like to enable Google Authenticator?"
-      qrstatus: "Google Authenticator Status:"
+      title: ""
+      nice_request: "Would you like to enable Two Factor Authentication?"
+      qrstatus: "2FA Status:"
       enter_token: "Please enter your token number to continue"
       submit: "Continue..."
       newtoken: "Generate new token"
